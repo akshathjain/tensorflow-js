@@ -37,9 +37,10 @@ Import the appropriate TensorFlow.js scripts:
 ```
 <br>
 
+### Task 2 - Add an Image to your Website
 Add an image of your choice to the website
 ```html
-<img id='img' src="your image here!">
+<img id='img' width='400px' height='400px' src="your image here!">
 ```
 <br>
 
@@ -47,6 +48,8 @@ Add an image of your choice to the website
 In `main.js`:
 
 ```js
+// note: this is only a sample of the code that you're going to have to use
+
 // obtain the image
 var img = document.getElementById('img');
 
@@ -56,9 +59,7 @@ const convNet = await posenet.load({
 });
 
 // estimate pose
-const pose = await convNet.estimateSinglePose(img, {
-    flipHorizontal: false,
-});
+const pose = await convNet.estimateSinglePose(img);
 
 // print the pose out to the console
 console.log(pose);
