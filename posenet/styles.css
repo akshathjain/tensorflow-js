@@ -9,9 +9,4 @@ Purpose: file to store all styless
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* for safari and chrome */
     -moz-transform:rotateY(180deg); /* for firefox */
-
-    /* we don't actually want to output the video, we're going
-       to do that manually using a canvas element
-    */
-    /* display: none; */
 }
