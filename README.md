@@ -26,46 +26,33 @@ You can familiarize yourself with basic web development using these resources:
 - [w3schools](https://www.w3schools.com/)
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn)
 
+
+<br>
+<br>
+
 ## Lab
-The lab will walk you through creating a simple website that displays an image, uses Posenet (a pretrained TensorFlow.js model) to identify a pose, and the output the resulting pose to the console.
+The lab will walk you through creating a simple website that uses a computer's webcam to get a live video feed, uses Posenet (a pretrained TensorFlow.js model) to identify a pose, and then output the resulting pose to the console.
 
 ### Task 1 - Setting up a website
-Import the appropriate TensorFlow.js scripts:
+- Create an `index.html`
+- Creat a script file (e.g. `main.js`) and link that to your `index.html`
+- Import the appropriate TensorFlow.js scripts:
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>`
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
 ```
 <br>
 
-### Task 2 - Add an Image to your Website
-Add an image of your choice to the website
-```html
-<img id='img' width='400px' height='400px' src="your image here!">
-```
+
+### Task 2 - Add an Video to your Website
+- On Safari, you'll have to allow media capture on insecure sites: `Develop -> Web RTC -> Allow Media Capture on Insecure Sites`
+
 <br>
 
 ### Task 3 - Run the Posenet Convolutional Neural Network to Identify the image
-In `main.js`:
-
-```js
-// note: this is only a sample of the code that you're going to have to use
-
-// obtain the image
-var img = document.getElementById('img');
-
-// load posenet
-const convNet = await posenet.load({
-    architecture: 'MobileNetV1',
-});
-
-// estimate pose
-const pose = await convNet.estimateSinglePose(img);
-
-// print the pose out to the console
-console.log(pose);
-```
+- Check out the reference code in the `posenet/` directory
+- The [Posenet](https://github.com/tensorflow/tfjs-models/tree/master/posenet) GitHub repository has very good documentation.
 
 <br>
 
 ### Task 4 (extra) - Draw the pose onto a Canvas element
-### Task 5 (extra) - Use your computer's webcam to track your pose
